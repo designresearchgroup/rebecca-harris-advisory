@@ -27,6 +27,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"Meridian Advisory","description":"Contract negotiation and operations advisor. Twenty years negotiating and running the contracts and operations behind healthcare, government, and public-health programs.","areaServed":["California","United States"],"founder":{"@type":"Person","name":"Rebecca Harris","jobTitle":"Government Contracting, Procurement & Negotiation Advisor"},"knowsAbout":["Government contracting","Procurement","Vendor contract negotiation","Contract negotiation","Healthcare payer contracting","Medi-Cal","Delegated credentialing","NCQA","URAC","Provider network development","Public health operations"],"url":"https://rebeccaharrisadvisory.com/"}
@@ -71,22 +73,24 @@ p strong,li strong,p b,li b{font-weight:var(--fw-semi);}
 .live-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:breathe 3s var(--ease) infinite;flex-shrink:0;}
 @keyframes breathe{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(46,139,131,.3);}50%{opacity:.55;box-shadow:0 0 0 7px rgba(46,139,131,0);}}
 
-/* buttons — soft pills, no harsh strokes */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--sp2);padding:12px 24px;font-size:var(--text-base);font-weight:var(--fw-semi);letter-spacing:var(--ls-wide);border:0;border-radius:var(--r-pill);background:transparent;color:var(--t1);cursor:pointer;white-space:nowrap;transition:background var(--dur),color var(--dur),transform var(--dur),box-shadow var(--dur);}
-.btn:hover{transform:translateY(-2px);}.btn:active{transform:translateY(0);}
-.btn:focus-visible{outline:2px solid var(--bd-focus);outline-offset:3px;}
-.btn-solid{background:var(--accent);color:var(--accent-text);box-shadow:0 8px 20px rgba(46,139,131,.22);}
-.btn-solid:hover{background:var(--accent-hover);box-shadow:0 12px 28px rgba(46,139,131,.3);}
-.btn-outline{background:var(--bg1);color:var(--t1);box-shadow:var(--shadow-sm);}
-.btn-outline:hover{color:var(--accent);box-shadow:var(--shadow);}
-.btn-primary{color:var(--accent);background:var(--accent-lt);}
-.btn-ghost{color:var(--t2);}.btn-ghost:hover{background:var(--bg2);color:var(--t1);}
-.btn-sm{padding:8px 16px;font-size:var(--text-sm);}.btn-lg{padding:15px 30px;font-size:var(--text-md);}
-.sect-cta{display:flex;flex-wrap:wrap;gap:var(--sp3);margin-top:var(--sp6);}
+/* buttons — editorial, no fill: a "signature line" that draws + a sliding arrow */
+.btn{display:inline-flex;align-items:center;gap:9px;padding:6px 0 10px;font-size:var(--text-md);font-weight:var(--fw-semi);letter-spacing:.01em;border:0;background:none;color:var(--t1);cursor:pointer;white-space:nowrap;position:relative;transition:color var(--dur),gap var(--dur);}
+.btn::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--bd2);transform-origin:left;transition:transform var(--dur-md) var(--ease),background var(--dur),height var(--dur);}
+.btn:hover{color:var(--accent);gap:15px;}
+.btn:hover::after{background:var(--accent);height:3px;}
+.btn:focus-visible{outline:2px solid var(--bd-focus);outline-offset:4px;}
+.btn-solid{color:var(--accent);}.btn-solid::after{background:var(--accent);}
+.btn-outline{color:var(--t1);}
+.btn-primary{color:var(--accent);}.btn-primary::after{background:var(--accent);}
+.btn-ghost{color:var(--t2);}.btn-ghost::after{display:none;}.btn-ghost:hover{color:var(--accent);}
+.btn-sm{font-size:var(--text-sm);gap:7px;}.btn-lg{font-size:var(--text-lg);}
+.sect-cta{display:flex;flex-wrap:wrap;gap:var(--sp8);margin-top:var(--sp8);}
 
-.badge{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:var(--text-2xs);font-weight:500;letter-spacing:var(--ls-wider);text-transform:uppercase;padding:4px 11px;border-radius:var(--r-pill);}
-.badge-accent{color:var(--accent);background:var(--accent-lt);}
-.badge-neutral{color:var(--t3);background:var(--bg3);}
+/* badges — no fill: a dotted mono tag */
+.badge{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:var(--text-2xs);font-weight:500;letter-spacing:var(--ls-wider);text-transform:uppercase;padding:0;background:none;color:var(--t3);}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0;}
+.badge-accent{color:var(--accent);}
+.badge-neutral{color:var(--t3);}
 
 /* nav */
 .nav{position:sticky;top:0;z-index:900;height:var(--nav-h);background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:saturate(170%) blur(14px);-webkit-backdrop-filter:saturate(170%) blur(14px);}
@@ -95,11 +99,13 @@ p strong,li strong,p b,li b{font-weight:var(--fw-semi);}
 .nav-logo-mark{width:38px;height:38px;border-radius:12px;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:var(--display);font-size:20px;box-shadow:0 6px 16px rgba(46,139,131,.26);flex-shrink:0;}
 .nav-logo-text{font-family:var(--display);font-size:var(--text-xl);letter-spacing:var(--ls-tight);color:var(--t1);}
 .nav-links{display:flex;gap:var(--sp6);margin-left:var(--sp10);height:100%;align-items:center;}
-.nav-links a{font-size:var(--text-sm);font-weight:var(--fw-medium);color:var(--t2);}
+.nav-links a{font-size:var(--text-sm);font-weight:var(--fw-medium);color:var(--t2);position:relative;}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:1.5px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform var(--dur-md) var(--ease);}
 .nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--accent);}
-.nav-actions{display:flex;align-items:center;gap:var(--sp3);margin-left:auto;}
-.nav-btn{width:40px;height:40px;display:grid;place-items:center;border-radius:var(--r-pill);border:0;background:var(--bg2);color:var(--t2);cursor:pointer;transition:all var(--dur);}
-.nav-btn:hover{color:var(--accent);background:var(--accent-lt);}.nav-btn svg{width:16px;height:16px;}
+.nav-links a:hover::after,.nav-links a[aria-current="page"]::after{transform:scaleX(1);}
+.nav-actions{display:flex;align-items:center;gap:var(--sp5);margin-left:auto;}
+.nav-btn{width:34px;height:34px;display:grid;place-items:center;border:0;background:none;color:var(--t3);cursor:pointer;transition:color var(--dur);}
+.nav-btn:hover{color:var(--accent);}.nav-btn svg{width:16px;height:16px;}
 .nav-book .nav-book-sm{display:none;}
 @media(max-width:700px){.nav-links{display:none;}}
 @media(max-width:600px){.nav-book .nav-book-lg{display:none;}.nav-book .nav-book-sm{display:inline;}}
@@ -176,7 +182,7 @@ p strong,li strong,p b,li b{font-weight:var(--fw-semi);}
 .book{background:linear-gradient(135deg,var(--bg1),color-mix(in srgb,var(--accent) 8%,var(--bg1)));border-radius:var(--r);padding:var(--sp12) var(--sp10);margin-top:var(--sp8);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:var(--sp10);align-items:center;box-shadow:var(--shadow);}
 .book h2{font-family:var(--display);font-weight:var(--fw-regular);font-size:var(--text-4xl);line-height:var(--lh-tight);letter-spacing:var(--ls-display);margin:var(--sp3) 0 var(--sp4);}
 .book p{color:var(--t2);font-size:var(--text-lg);line-height:var(--lh-relaxed);margin:0;max-width:52ch;}
-.book-side{display:flex;flex-direction:column;gap:var(--sp3);}.book-side .btn{width:100%;}
+.book-side{display:flex;flex-direction:column;gap:var(--sp5);align-items:flex-start;}
 .book-mail{font-family:var(--mono);font-size:var(--text-sm);color:var(--t3);text-align:center;}.book-mail a{color:var(--accent);}
 
 @media(max-width:860px){.pillars,.two-up,.about-grid,.book{grid-template-columns:1fr;}.svc-grid,.helps{grid-template-columns:1fr 1fr;}}
