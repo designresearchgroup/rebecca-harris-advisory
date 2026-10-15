@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Capability Intake — Meridian Public Advisors</title>
+<meta name="description" content="A short intake to steer your strategy and finalize your Statement of Capabilities.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+<meta name="theme-color" content="#00338D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0A1F44; --blue:#00338D; --cobalt:#005EB8; --sky:#0091DA;
+  --ink:#0A1F44; --body:#33415A; --muted:#64748B; --line:#E2E8F2; --line2:#CBD6E6;
+  --bg:#FFFFFF; --panel:#F5F8FC; --panel2:#EDF2FA;
+  --ok:#0F766E; --ok-bg:#E6F4F1; --warn:#B45309; --warn-bg:#FBF1E4;
+  --r:8px; --sh:0 1px 2px rgba(10,31,68,.06), 0 12px 32px rgba(10,31,68,.08);
+  --f:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{font-family:var(--f);background:var(--bg);color:var(--body);font-size:15px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;}
+a{color:var(--cobalt);}
+h1,h2,h3,h4,p{margin:0;}
+.navy{color:var(--navy);}
+/* top bar */
+.bar{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(180%) blur(8px);z-index:30;}
+.bar-in{max-width:1180px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;gap:14px;}
+.logo{display:flex;align-items:center;gap:11px;}
+.logo .mk{width:34px;height:34px;border-radius:7px;background:var(--blue);display:grid;place-items:center;
+  color:#fff;font-weight:800;font-size:16px;letter-spacing:-.5px;}
+.logo .nm{font-weight:700;color:var(--navy);letter-spacing:-.01em;line-height:1.05;font-size:15px;}
+.logo .nm small{display:block;font-weight:500;color:var(--muted);font-size:11px;letter-spacing:.02em;}
+.bar .doc{margin-left:auto;font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;}
+/* progress */
+.prog{height:3px;background:var(--line);}
+.prog > span{display:block;height:100%;background:var(--cobalt);width:0;transition:width .3s ease;}
+/* layout */
+.hero{background:linear-gradient(180deg,#0A1F44 0%,#0C285A 100%);color:#fff;}
+.hero-in{max-width:1180px;margin:0 auto;padding:54px 28px 48px;}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7FB2E6;}
+.hero h1{font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-.02em;line-height:1.08;margin:14px 0 14px;max-width:18ch;}
+.hero p{color:#C9D8EC;font-size:17px;line-height:1.6;max-width:60ch;}
+.hero .meta{margin-top:22px;display:flex;gap:26px;flex-wrap:wrap;font-size:13px;color:#9FBBDA;}
+.hero .meta b{color:#fff;font-weight:600;display:block;font-size:15px;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+.grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:start;padding:44px 0 80px;}
+@media(max-width:920px){.grid{grid-template-columns:1fr;gap:28px;}}
+/* form */
+.sec{border-top:1px solid var(--line);padding:30px 0;}
+.sec:first-child{border-top:none;padding-top:8px;}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin-bottom:6px;}
+.sec-n{font-weight:700;color:var(--cobalt);font-size:13px;font-variant-numeric:tabular-nums;}
+.sec-h h2{font-size:20px;font-weight:700;color:var(--navy);letter-spacing:-.01em;}
+.sec-sub{color:var(--muted);font-size:14px;margin:2px 0 20px;max-width:58ch;}
+.field{margin-bottom:18px;}
+.field label{display:block;font-weight:600;color:var(--navy);font-size:13.5px;margin-bottom:6px;}
+.field .hint{font-weight:400;color:var(--muted);font-size:12.5px;}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:560px){.row2{grid-template-columns:1fr;}}
+input[type=text],input[type=email],input[type=tel],select,textarea{
+  width:100%;font:inherit;font-size:14.5px;color:var(--ink);background:#fff;
+  border:1px solid var(--line2);border-radius:var(--r);padding:11px 13px;transition:border-color .15s,box-shadow .15s;}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--cobalt);box-shadow:0 0 0 3px rgba(0,94,184,.14);}
+textarea{min-height:84px;resize:vertical;line-height:1.5;}
+.chips{display:flex;flex-wrap:wrap;gap:9px;}
+.chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line2);border-radius:999px;
+  padding:8px 14px;font-size:13.5px;font-weight:500;color:var(--body);cursor:pointer;user-select:none;transition:all .14s;}
+.chip:hover{border-color:var(--cobalt);}
+.chip input{position:absolute;opacity:0;width:0;height:0;}
+.chip.on{background:var(--blue);border-color:var(--blue);color:#fff;}
+.chip .tick{width:15px;height:15px;border:1.5px solid var(--line2);border-radius:50%;display:grid;place-items:center;font-size:10px;}
+.chip.on .tick{background:#fff;border-color:#fff;color:var(--blue);}
+/* preview panel */
+.panel{position:sticky;top:84px;}
+.pv{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--sh);overflow:hidden;}
+.pv-top{background:var(--navy);color:#fff;padding:20px 22px;}
+.pv-top .t{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7FB2E6;font-weight:700;}
+.pv-top .firm{font-size:19px;font-weight:800;letter-spacing:-.01em;margin-top:5px;}
+.pv-top .tag{font-size:12.5px;color:#C9D8EC;margin-top:3px;}
+.pv-body{padding:18px 22px 22px;}
+.pv-k{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:16px 0 8px;}
+.pv-k:first-child{margin-top:0;}
+.drow{display:flex;justify-content:space-between;gap:14px;padding:7px 0;border-bottom:1px solid var(--line);font-size:13px;}
+.drow:last-child{border-bottom:none;}
+.drow .l{color:var(--muted);}
+.drow .v{color:var(--navy);font-weight:600;text-align:right;overflow-wrap:anywhere;}
+.badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+  padding:2px 7px;border-radius:4px;}
+.badge.pend{background:var(--warn-bg);color:var(--warn);}
+.badge.ok{background:var(--ok-bg);color:var(--ok);}
+.pv-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.pv-tags span{font-size:11.5px;font-weight:600;color:var(--blue);background:var(--panel2);border-radius:5px;padding:4px 9px;}
+.pv-note{font-size:12px;color:var(--muted);line-height:1.5;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);}
+/* actions */
+.actions{position:sticky;bottom:0;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);
+  border-top:1px solid var(--line);padding:16px 0;margin-top:10px;z-index:20;}
+.actions-in{max-width:1180px;margin:0 auto;padding:0 28px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:600;font-size:14.5px;
+  border-radius:var(--r);padding:12px 22px;border:1px solid transparent;cursor:pointer;transition:all .15s;text-decoration:none;}
+.btn-primary{background:var(--cobalt);color:#fff;}
+.btn-primary:hover{background:var(--blue);}
+.btn-ghost{background:#fff;border-color:var(--line2);color:var(--navy);}
+.btn-ghost:hover{border-color:var(--cobalt);color:var(--cobalt);}
+.saved{font-size:12.5px;color:var(--muted);margin-left:auto;}
+.toast{position:fixed;left:50%;bottom:86px;transform:translateX(-50%);background:var(--navy);color:#fff;
+  padding:11px 20px;border-radius:8px;font-size:13.5px;font-weight:500;box-shadow:var(--sh);opacity:0;
+  pointer-events:none;transition:opacity .2s;z-index:50;}
+.toast.show{opacity:1;}
+.foot{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--muted);font-size:12px;line-height:1.6;}
+</style>
+</head>
+<body>
+<div class="bar">
+  <div class="bar-in">
+    <div class="logo">
+      <div class="mk">M</div>
+      <div class="nm">Meridian Public Advisors<small>Capability intake &amp; strategy</small></div>
+    </div>
+    <div class="doc">Confidential</div>
+  </div>
+  <div class="prog"><span id="prog"></span></div>
+</div>
+
+<section class="hero">
+  <div class="hero-in">
+    <span class="eyebrow">Better procurement for better business outcomes</span>
+    <h1>Steer your strategy &amp; finalize your capability statement.</h1>
+    <p>Rebecca — this is yours to shape. A few minutes to point the direction, confirm the company
+    details, and tell us what&rsquo;s worth capturing. Your answers build your Statement of
+    Capabilities on the right, and feed the <strong style="color:#fff">contract intelligence</strong>
+    knowledge base we&rsquo;re building around your expertise.</p>
+    <div class="meta">
+      <div>Takes<b>~8 minutes</b></div>
+      <div>Saves as you go<b>Nothing is lost</b></div>
+      <div>When you finish<b>One click sends it to the team</b></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="grid">
+    <!-- FORM -->
+    <form id="form" autocomplete="off">
+
+      <div class="sec">
+        <div class="sec-h"><span class="sec-n">01</span><h2>Steer the strategy</h2></div>
+        <p class="sec-sub">The most important part. Tell us where to point this — we&rsquo;ll follow your lead.</p>
+
+        <div class="field">
+          <label>In one line, what do you want to be known for?</label>
+          <input type="text" id="known" placeholder="e.g. The negotiator who gets government contracts and vendor deals done right.">
+        </div>
+        <div class="field">
+          <label>Which markets should we prioritize? <span class="hint">pick any</span></label>
+          <div class="chips" data-group="markets">
+            <label class="chip"><input type="checkbox" value="Government agencies"><span class="tick"></span>Government agencies</label>
+            <label class="chip"><input type="checkbox" value="Counties"><span class="tick"></span>Counties</label>
+            <label class="chip"><input type="checkbox" value="NGOs & nonprofits"><span class="tick"></span>NGOs &amp; nonprofits</label>
+            <label class="chip"><input type="checkbox" value="Nonprofit healthcare"><span class="tick"></span>Nonprofit healthcare</label>
+            <label class="chip"><input type="checkbox" value="Health plans & payers"><span class="tick"></span>Health plans &amp; payers</label>
+            <label class="chip"><input type="checkbox" value="Sports venues & events"><span class="tick"></span>Sports venues &amp; events</label>
+            <label class="chip"><input type="checkbox" value="Vendors & primes"><span class="tick"></span>Vendors &amp; primes</label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Contract intelligence — the knowledge base we&rsquo;re building</label>
+          <p class="hint" style="margin:-2px 0 8px">Of your 20 years, what&rsquo;s most valuable to capture and sell as intelligence? (playbooks, clause libraries, process know-how, where deals go wrong…)</p>
+          <textarea id="intel" placeholder="What do you know cold that others pay for?"></textarea>
+        </div>
+        <div class="field">
+          <label>Engagement types you want to offer <span class="hint">pick any</span></label>
+          <div class="chips" data-group="engagements">
+            <label class="chip"><input type="checkbox" value="Advisory / working sessions"><span class="tick"></span>Advisory / working sessions</label>
+            <label class="chip"><input type="checkbox" value="SME on solicitations"><span class="tick"></span>SME on solicitations</label>
+            <label class="chip"><input type="checkbox" value="Interim leadership"><span class="tick"></span>Interim leadership</label>
+            <label class="chip"><input type="checkbox" value="Retainer"><span class="tick"></span>Retainer</label>
+            <label class="chip"><input type="checkbox" value="Knowledge base / content"><span class="tick"></span>Knowledge base / content</label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Anything we&rsquo;ve got wrong, or should emphasize?</label>
+          <textarea id="steer" placeholder="Your call — redirect us however you see it."></textarea>
+        </div>
+      </div>
+
+      <div class="sec">
+        <div class="sec-h"><span class="sec-n">02</span><h2>Company</h2></div>
+        <p class="sec-sub">For the capability statement. &ldquo;Meridian Public Advisors&rdquo; is a working name — change it to whatever you want the firm called.</p>
+        <div class="field">
+          <label>Company / firm name</label>
+          <input type="text" id="legalName" placeholder="Meridian Public Advisors">
+        </div>
+        <div class="row2">
+          <div class="field"><label>DBA <span class="hint">if any</span></label><input type="text" id="dba" placeholder="Trading name"></div>
+          <div class="field"><label>Entity type</label>
+            <select id="entityType">
+              <option value="">Select…</option>
+              <option>LLC</option><option>Corporation (Inc.)</option><option>S-Corp</option>
+              <option>Sole proprietor</option><option>Nonprofit</option><option>Not formed yet</option><option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="field" style="max-width:260px"><label>State of formation</label><input type="text" id="state" placeholder="California"></div>
+      </div>
+
+      <div class="sec">
+        <div class="sec-h"><span class="sec-n">03</span><h2>Registrations</h2></div>
+        <p class="sec-sub">Only if they exist — leave blank and we&rsquo;ll keep them marked &ldquo;pending.&rdquo;</p>
+        <div class="row2">
+          <div class="field"><label>SAM.gov UEI <span class="hint">12 characters</span></label><input type="text" id="uei" placeholder="e.g. ABC123DEF456"></div>
+          <div class="field"><label>CAGE code</label><input type="text" id="cage" placeholder="5 characters"></div>
+        </div>
+        <div class="field"><label>NAICS codes <span class="hint">primary first, comma-separated</span></label><input type="text" id="naics" placeholder="541611, 541990, 621999"></div>
+        <div class="field">
+          <label>Certifications <span class="hint">pick any that apply or are in progress</span></label>
+          <div class="chips" data-group="certs">
+            <label class="chip"><input type="checkbox" value="Small Business"><span class="tick"></span>Small Business</label>
+            <label class="chip"><input type="checkbox" value="WOSB / EDWOSB"><span class="tick"></span>WOSB / EDWOSB</label>
+            <label class="chip"><input type="checkbox" value="DBE / MBE"><span class="tick"></span>DBE / MBE</label>
+            <label class="chip"><input type="checkbox" value="8(a)"><span class="tick"></span>8(a)</label>
+            <label class="chip"><input type="checkbox" value="HUBZone"><span class="tick"></span>HUBZone</label>
+          </div>
+        </div>
+        <div class="field" style="max-width:300px"><label>Certification status</label>
+          <select id="certStatus"><option value="">Select…</option><option>Registered</option><option>In progress</option><option>Not pursuing yet</option></select>
+        </div>
+      </div>
+
+      <div class="sec">
+        <div class="sec-h"><span class="sec-n">04</span><h2>Contact</h2></div>
+        <div class="row2">
+          <div class="field"><label>Point of contact</label><input type="text" id="poc" placeholder="Rebecca Harris"></div>
+          <div class="field"><label>Email</label><input type="email" id="email" placeholder="rebecca@…"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label>Phone <span class="hint">optional</span></label><input type="tel" id="phone" placeholder="(000) 000-0000"></div>
+          <div class="field"><label>Location</label><input type="text" id="location" placeholder="Northern California"></div>
+        </div>
+        <div class="field"><label>Website</label><input type="text" id="website" placeholder="rebeccaharrisadvisory.com"></div>
+      </div>
+    </form>
+
+    <!-- LIVE PREVIEW -->
+    <aside class="panel">
+      <div class="pv">
+        <div class="pv-top">
+          <div class="t">Statement of Capabilities · live preview</div>
+          <div class="firm" id="pvFirm">Meridian Public Advisors</div>
+          <div class="tag">Better procurement for better business outcomes.</div>
+        </div>
+        <div class="pv-body">
+          <div class="pv-k">Known for</div>
+          <div id="pvKnown" style="font-size:13.5px;color:var(--navy);font-weight:500;">—</div>
+
+          <div class="pv-k">Markets served</div>
+          <div class="pv-tags" id="pvMarkets"><span style="background:none;color:var(--muted);padding-left:0">—</span></div>
+
+          <div class="pv-k">Company data</div>
+          <div class="drow"><span class="l">Entity</span><span class="v" id="pvEntity"><span class="badge pend">pending</span></span></div>
+          <div class="drow"><span class="l">SAM.gov UEI</span><span class="v" id="pvUei"><span class="badge pend">pending</span></span></div>
+          <div class="drow"><span class="l">NAICS</span><span class="v" id="pvNaics"><span class="badge pend">pending</span></span></div>
+          <div class="drow"><span class="l">Certifications</span><span class="v" id="pvCerts"><span class="badge pend">pending</span></span></div>
+          <div class="drow"><span class="l">Contact</span><span class="v" id="pvPoc">—</span></div>
+
+          <div class="pv-note">Past performance will be shown as the principal&rsquo;s (your) 20-year experience — not the firm&rsquo;s. Anything left blank stays marked pending until confirmed.</div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="actions">
+  <div class="actions-in">
+    <button type="button" class="btn btn-primary" id="send">Review &amp; send to the team →</button>
+    <button type="button" class="btn btn-ghost" id="copy">Copy my answers</button>
+    <span class="saved" id="saved">Saved automatically</span>
+  </div>
+</div>
+
+<div class="wrap"><div class="foot">
+  Meridian Public Advisors (working name) · Confidential intake. Your answers are kept in your own
+  browser as you type and are only sent when you choose &ldquo;send to the team.&rdquo; Nothing here
+  is a contract or an obligation. The figures that appear in your capability statement are your
+  personal professional experience, shown as such.
+</div></div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  "use strict";
+  var KEY='mpa-intake-v1', TO='james@humandata.id';
+  var $=function(s){return document.querySelector(s)};
+  var ids=['known','intel','steer','legalName','dba','entityType','state','uei','cage','naics','certStatus','poc','email','phone','location','website'];
+
+  function groupVals(g){return [].map.call(document.querySelectorAll('[data-group="'+g+'"] input:checked'),function(i){return i.value})}
+  function setGroup(g,arr){document.querySelectorAll('[data-group="'+g+'"] input').forEach(function(i){
+    i.checked=arr.indexOf(i.value)>-1; i.closest('.chip').classList.toggle('on',i.checked)})}
+
+  function collect(){
+    var o={}; ids.forEach(function(id){o[id]=($('#'+id)||{}).value||''});
+    o.markets=groupVals('markets'); o.engagements=groupVals('engagements'); o.certs=groupVals('certs');
+    return o;
+  }
+  function restore(){
+    try{var o=JSON.parse(localStorage.getItem(KEY)||'{}');
+      ids.forEach(function(id){if(o[id]!=null&&$('#'+id))$('#'+id).value=o[id]});
+      setGroup('markets',o.markets||[]); setGroup('engagements',o.engagements||[]); setGroup('certs',o.certs||[]);
+    }catch(e){}
+  }
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(collect()))}catch(e){}}
+
+  function esc(s){return (s||'').replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+  function okBadge(t){return '<span class="badge ok">'+esc(t)+'</span>'}
+  function pend(){return '<span class="badge pend">pending</span>'}
+
+  function render(){
+    var o=collect();
+    $('#pvFirm').textContent=o.legalName||'Meridian Public Advisors';
+    $('#pvKnown').textContent=o.known||'—';
+    // markets
+    var m=$('#pvMarkets');
+    if(o.markets.length){m.innerHTML=o.markets.map(function(x){return '<span>'+esc(x)+'</span>'}).join('')}
+    else{m.innerHTML='<span style="background:none;color:var(--muted);padding-left:0">—</span>'}
+    $('#pvEntity').innerHTML = o.entityType ? esc(o.entityType)+(o.state?' · '+esc(o.state):'') : pend();
+    $('#pvUei').innerHTML = o.uei ? okBadge('confirmed')+' '+esc(o.uei) : pend();
+    $('#pvNaics').innerHTML = o.naics ? esc(o.naics) : pend();
+    $('#pvCerts').innerHTML = o.certs.length ? esc(o.certs.join(', '))+(o.certStatus?' ('+esc(o.certStatus)+')':'') : pend();
+    $('#pvPoc').innerHTML = (o.poc||'—')+(o.email?'<br><span style="font-weight:400;color:var(--muted)">'+esc(o.email)+'</span>':'');
+    // progress
+    var fields=[o.known,o.legalName,o.entityType,o.poc,o.email,o.markets.length,o.intel,o.location];
+    var done=fields.filter(function(x){return x&&x!==''&&x!==0}).length;
+    $('#prog').style.width=Math.round(done/fields.length*100)+'%';
+  }
+
+  function plain(){
+    var o=collect(), L=[];
+    L.push('MERIDIAN PUBLIC ADVISORS — CAPABILITY INTAKE & STRATEGY');
+    L.push('(from Rebecca Harris)'); L.push('');
+    L.push('— STEER —');
+    L.push('Known for: '+o.known);
+    L.push('Priority markets: '+o.markets.join(', '));
+    L.push('Contract intelligence to capture: '+o.intel);
+    L.push('Engagement types: '+o.engagements.join(', '));
+    L.push('Redirect / emphasize: '+o.steer); L.push('');
+    L.push('— COMPANY —');
+    L.push('Name: '+o.legalName+(o.dba?'  (DBA: '+o.dba+')':''));
+    L.push('Entity: '+o.entityType+(o.state?'  / '+o.state:'')); L.push('');
+    L.push('— REGISTRATIONS —');
+    L.push('SAM UEI: '+o.uei+'   CAGE: '+o.cage);
+    L.push('NAICS: '+o.naics);
+    L.push('Certs: '+o.certs.join(', ')+(o.certStatus?'  ['+o.certStatus+']':'')); L.push('');
+    L.push('— CONTACT —');
+    L.push('POC: '+o.poc+'   '+o.email+'   '+o.phone);
+    L.push('Location: '+o.location+'   Web: '+o.website);
+    return L.join('\n');
+  }
+
+  function toast(t){var el=$('#toast');el.textContent=t;el.classList.add('show');setTimeout(function(){el.classList.remove('show')},2200)}
+
+  // wire
+  restore(); render();
+  document.addEventListener('input',function(){save();render()});
+  document.addEventListener('change',function(e){
+    if(e.target.closest('.chip'))e.target.closest('.chip').classList.toggle('on',e.target.checked);
+    save();render();
+  });
+  $('#copy').addEventListener('click',function(){
+    var t=plain();
+    if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){toast('Answers copied — paste them to the team')},function(){toast('Copy failed — select and copy manually')})}
+    else{toast('Copy not supported — use “send to the team”')}
+  });
+  $('#send').addEventListener('click',function(){
+    var o=collect();
+    var subj='Meridian intake & strategy — '+(o.legalName||'Rebecca Harris');
+    var url='mailto:'+TO+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(plain());
+    window.location.href=url;
+    toast('Opening your email… send it and we’ll take it from there');
+  });
+})();
+</script>
+</body>
+</html>
