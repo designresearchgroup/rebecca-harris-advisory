@@ -3,22 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Capability Intake — Meridian Public Advisors</title>
+<title>Capability Intake — Meridian Advisory</title>
 <meta name="description" content="A short intake to steer your strategy and finalize your Statement of Capabilities.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
-<meta name="theme-color" content="#00338D">
+<meta name="theme-color" content="#2E8B83">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#0A1F44; --blue:#00338D; --cobalt:#005EB8; --sky:#0091DA;
-  --ink:#0A1F44; --body:#33415A; --muted:#64748B; --line:#E2E8F2; --line2:#CBD6E6;
-  --bg:#FFFFFF; --panel:#F5F8FC; --panel2:#EDF2FA;
-  --ok:#0F766E; --ok-bg:#E6F4F1; --warn:#B45309; --warn-bg:#FBF1E4;
-  --r:8px; --sh:0 1px 2px rgba(10,31,68,.06), 0 12px 32px rgba(10,31,68,.08);
-  --f:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --navy:#26302C; --blue:#2E8B83; --cobalt:#2E8B83; --sky:#5FBDB2;
+  --ink:#26302C; --body:#58615B; --muted:#8a918b; --line:rgba(38,48,44,.1); --line2:rgba(38,48,44,.18);
+  --bg:#FAF6EF; --panel:#F3ECE1; --panel2:#EAE1D3;
+  --ok:#4E9E7E; --ok-bg:rgba(78,158,126,.14); --warn:#D9915A; --warn-bg:rgba(224,147,107,.16);
+  --r:12px; --sh:0 1px 2px rgba(38,48,44,.05), 0 14px 36px rgba(38,48,44,.08);
+  --f:'DM Sans',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  --display:'Instrument Serif',Georgia,serif; --mono:'DM Mono',ui-monospace,monospace;
 }
 *{box-sizing:border-box;}
 html,body{margin:0;padding:0;}
@@ -41,12 +42,12 @@ h1,h2,h3,h4,p{margin:0;}
 .prog{height:3px;background:var(--line);}
 .prog > span{display:block;height:100%;background:var(--cobalt);width:0;transition:width .3s ease;}
 /* layout */
-.hero{background:linear-gradient(180deg,#0A1F44 0%,#0C285A 100%);color:#fff;}
+.hero{background:linear-gradient(155deg,#2E8B83 0%,#236b64 100%);color:#fff;}
 .hero-in{max-width:1180px;margin:0 auto;padding:54px 28px 48px;}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7FB2E6;}
-.hero h1{font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-.02em;line-height:1.08;margin:14px 0 14px;max-width:18ch;}
-.hero p{color:#C9D8EC;font-size:17px;line-height:1.6;max-width:60ch;}
-.hero .meta{margin-top:22px;display:flex;gap:26px;flex-wrap:wrap;font-size:13px;color:#9FBBDA;}
+.eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#BCE3DD;}
+.hero h1{font-family:var(--display);font-size:clamp(34px,5vw,60px);font-weight:400;letter-spacing:-.01em;line-height:1.05;margin:14px 0 14px;max-width:20ch;}
+.hero p{color:#DCEFEB;font-size:17px;line-height:1.65;max-width:60ch;}
+.hero .meta{margin-top:22px;display:flex;gap:26px;flex-wrap:wrap;font-size:13px;color:#AED6D0;}
 .hero .meta b{color:#fff;font-weight:600;display:block;font-size:15px;}
 .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
 .grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:start;padding:44px 0 80px;}
@@ -79,10 +80,10 @@ textarea{min-height:84px;resize:vertical;line-height:1.5;}
 /* preview panel */
 .panel{position:sticky;top:84px;}
 .pv{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--sh);overflow:hidden;}
-.pv-top{background:var(--navy);color:#fff;padding:20px 22px;}
-.pv-top .t{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7FB2E6;font-weight:700;}
-.pv-top .firm{font-size:19px;font-weight:800;letter-spacing:-.01em;margin-top:5px;}
-.pv-top .tag{font-size:12.5px;color:#C9D8EC;margin-top:3px;}
+.pv-top{background:linear-gradient(155deg,#2E8B83 0%,#236b64 100%);color:#fff;padding:22px 24px;}
+.pv-top .t{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#BCE3DD;font-weight:500;}
+.pv-top .firm{font-family:var(--display);font-size:24px;font-weight:400;letter-spacing:-.01em;margin-top:5px;}
+.pv-top .tag{font-size:12.5px;color:#DCEFEB;margin-top:3px;}
 .pv-body{padding:18px 22px 22px;}
 .pv-k{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:16px 0 8px;}
 .pv-k:first-child{margin-top:0;}
@@ -120,7 +121,7 @@ textarea{min-height:84px;resize:vertical;line-height:1.5;}
   <div class="bar-in">
     <div class="logo">
       <div class="mk">M</div>
-      <div class="nm">Meridian Public Advisors<small>Capability intake &amp; strategy</small></div>
+      <div class="nm">Meridian Advisory<small>Capability intake &amp; strategy</small></div>
     </div>
     <div class="doc">Confidential</div>
   </div>
@@ -191,10 +192,10 @@ textarea{min-height:84px;resize:vertical;line-height:1.5;}
 
       <div class="sec">
         <div class="sec-h"><span class="sec-n">02</span><h2>Company</h2></div>
-        <p class="sec-sub">For the capability statement. &ldquo;Meridian Public Advisors&rdquo; is a working name — change it to whatever you want the firm called.</p>
+        <p class="sec-sub">For the capability statement. &ldquo;Meridian Advisory&rdquo; is a working name — change it to whatever you want the firm called.</p>
         <div class="field">
           <label>Company / firm name</label>
-          <input type="text" id="legalName" placeholder="Meridian Public Advisors">
+          <input type="text" id="legalName" placeholder="Meridian Advisory">
         </div>
         <div class="row2">
           <div class="field"><label>DBA <span class="hint">if any</span></label><input type="text" id="dba" placeholder="Trading name"></div>
@@ -251,7 +252,7 @@ textarea{min-height:84px;resize:vertical;line-height:1.5;}
       <div class="pv">
         <div class="pv-top">
           <div class="t">Statement of Capabilities · live preview</div>
-          <div class="firm" id="pvFirm">Meridian Public Advisors</div>
+          <div class="firm" id="pvFirm">Meridian Advisory</div>
           <div class="tag">Better procurement for better business outcomes.</div>
         </div>
         <div class="pv-body">
@@ -284,7 +285,7 @@ textarea{min-height:84px;resize:vertical;line-height:1.5;}
 </div>
 
 <div class="wrap"><div class="foot">
-  Meridian Public Advisors (working name) · Confidential intake. Your answers are kept in your own
+  Meridian Advisory (working name) · Confidential intake. Your answers are kept in your own
   browser as you type and are only sent when you choose &ldquo;send to the team.&rdquo; Nothing here
   is a contract or an obligation. The figures that appear in your capability statement are your
   personal professional experience, shown as such.
@@ -322,7 +323,7 @@ textarea{min-height:84px;resize:vertical;line-height:1.5;}
 
   function render(){
     var o=collect();
-    $('#pvFirm').textContent=o.legalName||'Meridian Public Advisors';
+    $('#pvFirm').textContent=o.legalName||'Meridian Advisory';
     $('#pvKnown').textContent=o.known||'—';
     // markets
     var m=$('#pvMarkets');
@@ -341,7 +342,7 @@ textarea{min-height:84px;resize:vertical;line-height:1.5;}
 
   function plain(){
     var o=collect(), L=[];
-    L.push('MERIDIAN PUBLIC ADVISORS — CAPABILITY INTAKE & STRATEGY');
+    L.push('MERIDIAN ADVISORY — CAPABILITY INTAKE & STRATEGY');
     L.push('(from Rebecca Harris)'); L.push('');
     L.push('— STEER —');
     L.push('Known for: '+o.known);
