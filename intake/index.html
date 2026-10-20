@@ -17,7 +17,7 @@
   --ink:#26302C; --body:#58615B; --muted:#8a918b; --line:rgba(38,48,44,.1); --line2:rgba(38,48,44,.18);
   --bg:#FAF6EF; --panel:#F3ECE1; --panel2:#EAE1D3;
   --ok:#4E9E7E; --ok-bg:rgba(78,158,126,.14); --warn:#D9915A; --warn-bg:rgba(224,147,107,.16);
-  --r:12px; --sh:0 1px 2px rgba(38,48,44,.05), 0 14px 36px rgba(38,48,44,.08);
+  --r:0; --sh:0 1px 2px rgba(38,48,44,.05), 0 14px 36px rgba(38,48,44,.08);
   --f:'DM Sans',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
   --display:'Instrument Serif',Georgia,serif; --mono:'DM Mono',ui-monospace,monospace;
 }
@@ -79,7 +79,7 @@ textarea{min-height:84px;resize:vertical;line-height:1.5;}
 .chip.on .tick{background:var(--cobalt);border-color:var(--cobalt);color:#fff;}
 /* preview panel */
 .panel{position:sticky;top:84px;}
-.pv{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--sh);overflow:hidden;}
+.pv{background:#fff;border:1px solid var(--line);border-radius:0;box-shadow:var(--sh);overflow:hidden;}
 .pv-top{background:linear-gradient(155deg,#2E8B83 0%,#236b64 100%);color:#fff;padding:22px 24px;}
 .pv-top .t{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#BCE3DD;font-weight:500;}
 .pv-top .firm{font-family:var(--display);font-size:24px;font-weight:400;letter-spacing:-.01em;margin-top:5px;}
@@ -113,7 +113,7 @@ textarea{min-height:84px;resize:vertical;line-height:1.5;}
 .btn-ghost{color:var(--muted);}.btn-ghost::after{display:none;}.btn-ghost:hover{color:var(--ink);}
 .saved{font-size:12.5px;color:var(--muted);margin-left:auto;}
 .toast{position:fixed;left:50%;bottom:86px;transform:translateX(-50%);background:var(--navy);color:#fff;
-  padding:11px 20px;border-radius:8px;font-size:13.5px;font-weight:500;box-shadow:var(--sh);opacity:0;
+  padding:11px 20px;border-radius:0;font-size:13.5px;font-weight:500;box-shadow:var(--sh);opacity:0;
   pointer-events:none;transition:opacity .2s;z-index:50;}
 .toast.show{opacity:1;}
 .foot{border-top:1px solid var(--line);padding:26px 0 60px;color:var(--muted);font-size:12px;line-height:1.6;}

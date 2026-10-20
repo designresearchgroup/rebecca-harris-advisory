@@ -37,7 +37,7 @@ jobs:
           test -f img/og.png || { echo "::error::img/og.png missing — link previews would 404"; exit 1; }
           grep -q 'og:image' index.html || { echo "::error::no og:image"; exit 1; }
           grep -q 'rel="canonical"' index.html || { echo "::error::no canonical"; exit 1; }
-          grep -qi 'my own career' index.html || { echo "::error::honest career-record caveat is missing"; exit 1; }
+          grep -qi 'not the past performance of this firm' index.html || { echo "::error::honest career-record caveat is missing"; exit 1; }
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
